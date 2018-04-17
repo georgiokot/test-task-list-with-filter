@@ -1,3 +1,23 @@
+# Как запустить 
+
+    composer install 
+    npm install 
+    
+#dev-server php  
+из корня проекта 
+
+    php -S 127.0.0.1:8000 -t public
+    
+    
+    
+#dev-server webpack 
+    ./node_modules/.bin/encore dev-server --port 9000
+     
+#production version 
+    ./node_modules/.bin/encore production
+    
+    
+
 # Тестовое задание:
 
 _Входные артефакты_ :
