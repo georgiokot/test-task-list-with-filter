@@ -1,0 +1,31 @@
+<div id="orders">
+    <table class="table" >
+        <thead>
+        <tr>
+            <td class="text-center">ИД заказа</td>
+            <td class="text-center">Дата заказа</td>
+            <td class="text-center">Общая сумма заказа</td>
+            <td class="text-center">Количество продуктов заказа</td>
+        </tr>
+        </thead>
+        {% for order in pagination %}
+            <tbody>
+            <tr>
+                <td class="text-center">{{ order.id }}</td>
+                <td class="text-center">{{ order.date| date }}</td>
+                <td class="text-center">{{ order.sum }}</td>
+                <td class="text-center"><a class="popup_order" href="{{ path('popup_ordres', {id : order.id }) }}">{{ order.ordersItem | length }}</a> </td>
+            </tr>
+            </tbody>
+        {% else %}
+            <tbody>
+            <tr>
+                <td colspan="4">Заказов не найденно</td>
+            </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+</div>

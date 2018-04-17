@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <H1>Заказы</H1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <h3>Фильтр</h3>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+            <div class="col-9">
+                <h3>Заказы</h3>
+                {% include 'order/orders.html.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
